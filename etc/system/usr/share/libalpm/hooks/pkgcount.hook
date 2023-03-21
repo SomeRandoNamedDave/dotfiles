@@ -1,0 +1,9 @@
+[Trigger]
+Operation = Install
+Operation = Remove
+Type = Package
+Target = *
+[Action]
+Description = updating package count for fetch script
+When = PostTransaction
+Exec = /usr/local/bin/update_fetch_pkgcount.sh

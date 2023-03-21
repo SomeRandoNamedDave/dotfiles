@@ -1,0 +1,65 @@
+configuration {
+    window-format: "{icon} [{w}] {t}";
+    display-window: " ";
+}
+@import "colours"
+
+* {
+    background-color: transparent;
+    text-color: @base05;
+    border: 0;
+    padding: 0;
+}
+
+#window {
+    width: 420;
+    height: 100%;
+    location: west;
+    anchor: west;
+    background-color: @trans00;
+    border: 0 8 0 0;
+    border-color: @base0B;
+    children: [ listview, inputbar ];
+}
+
+element-text {
+    vertical-align: 0.5;
+    padding: 0 8 0 0;
+    highlight: @base01;
+}
+
+element-icon {
+    vertical-align: 0.5;
+    size: 40;
+    padding: 8;
+}
+
+element selected {
+    background-color: @base09;
+}
+
+element active {
+    background-color: @base0F;
+}
+
+element urgent {
+    background-color: @base0E;
+}
+
+inputbar {
+    children: [ entry, prompt ];
+}
+
+entry {
+    font: "Victor Mono Nerd Font Italic 14";
+    vertical-align: 0.6;
+    padding: 0 6 2 6;
+}
+
+prompt {
+    font: "Iosevka Nerd Font 21";
+    text-color: @base0F;
+    padding: 0 8 0 0;
+}
+
+// vim:ft=rasi

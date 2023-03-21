@@ -1,0 +1,8 @@
+pkgname='yt-dlp-deps'
+pkgver='1.0'
+pkgrel=1
+pkgdesc='yt-dlp build dependency package'
+arch=('x86_64')
+depends=('python-build' 'python-installer' 'python-pytest' 'python-setuptools' 'python-wheel' 'pandoc')
+
+package() { :; }

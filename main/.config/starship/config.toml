@@ -1,0 +1,260 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# prompt configuration
+
+command_timeout = 100
+add_newline = true
+
+# module configuration
+
+[aws]
+disabled = true
+
+[battery]
+disabled = true
+
+[buf]
+disabled = true
+
+[bun]
+disabled = true
+
+[c]
+format = '[via](italic 8) [$symbol(($name )$version)]($style) '
+style = 'bold blue'
+symbol = ' '
+version_format = '${raw}'
+
+[character]
+success_symbol = '[ ](bold green)'
+error_symbol = '[ ](bold red)'
+vimcmd_symbol = '[ ](bold green)'
+vimcmd_visual_symbol = '[ ](bold yellow)'
+vimcmd_replace_symbol = '[ ](bold purple)'
+vimcmd_replace_one_symbol = '[ ](bold purple)'
+
+# [cmake]
+
+[cobol]
+disabled = true
+
+[cmd_duration]
+disabled = true
+
+[conda]
+disabled = true
+
+# [container]
+
+[crystal]
+disabled = true
+
+[daml]
+disabled = true
+
+[dart]
+disabled = true
+
+[deno]
+disabled = true
+
+[directory]
+before_repo_root_style = '8'
+fish_style_pwd_dir_length = 3
+home_symbol = ' '
+read_only = ' 🔒'
+repo_root_style = 'bold cyan'
+truncation_symbol = '… /'
+use_logical_path = false
+
+[docker_context]
+disabled = true
+
+[dotnet]
+disabled = true
+
+[elixir]
+disabled = true
+
+[elm]
+disabled = true
+
+# [env_var]
+
+[erlang]
+disabled = true
+
+[fennel]
+disabled = true
+
+# [fill]
+
+[gcloud]
+disabled = true
+
+[git_branch]
+format = '[on](italic 8) [$symbol$branch(:$remote_branch)]($style) '
+symbol = ' '
+
+# [git_commit]
+
+# [git_state]
+
+# [git_metrics]
+
+[git_status]
+format = '([\[ $all_status$ahead_behind\]](bold purple) )'
+ahead = '[⇡ $count ](bold green)'
+behind = '[⇣ $count ](bold 16)'
+conflicted = '[ $count ](bold red)'
+deleted = '[✘ $count ](bold red)'
+diverged = '[󱡷 (+$ahead_count)(-$behind_count) ](bold 16)'
+modified = '[ $count ](bold 6)'
+renamed = '[ $count ](bold 6)'
+staged = '[ $count ](bold yellow)'
+stashed = '[ $count ](bold blue)'
+untracked = '[ $count ](bold 17)'
+
+[golang]
+format = '[via](italic 8) [$symbol($version)]($style) '
+symbol = ' '
+version_format = '${raw}'
+
+[guix_shell]
+disabled = true
+
+[gradle]
+disabled = true
+
+[haskell]
+disabled = true
+
+[haxe]
+disabled = true
+
+[helm]
+disabled = true
+
+# [hostname]
+
+[java]
+disabled = true
+
+[jobs]
+symbol = '華'
+
+[julia]
+disabled = true
+
+[kotlin]
+disabled = true
+
+[lua]
+format = '[via](italic 8) [$symbol($version)]($style) '
+symbol = ' '
+version_format = '${raw}'
+
+# [memory_usage]
+
+# [meson]
+
+[nim]
+disabled = true
+
+[nix_shell]
+disabled = true
+
+# [nodejs]
+
+[ocaml]
+disabled = true
+
+[opa]
+disabled = true
+
+[openstack]
+disabled = true
+
+[package]
+format = '[is](italic 8) [$symbol$version]($style) '
+style = 'bold 16'
+version_format = '${raw}'
+
+# [perl]
+
+# [php]
+
+[pulumi]
+disabled = true
+
+[purescript]
+disabled = true
+
+[python]
+format = '[via](italic 8) [${symbol}${pyenv_prefix}(${version} )(\\($virtualenv\\) )]($style)'
+version_format = '${raw}'
+
+[rlang]
+disabled = true
+
+[raku]
+disabled = true
+
+[red]
+disabled = true
+
+[ruby]
+disabled = true
+
+[rust]
+format = '[via](italic 8) [$symbol($version )]($style)'
+style = 'bold fg:#f74c00'
+version_format = '${raw}'
+
+[scala]
+disabled = true
+
+[shlvl]
+disabled = false
+
+[singularity]
+disabled = true
+
+[spack]
+disabled = true
+
+[status]
+disabled = false
+format = '[$common_meaning$signal_name$maybe_int]($style) '
+pipestatus = true
+pipestatus_format = '\[$pipestatus\] => [$common_meaning$signal_name$maybe_int]($style) '
+style = 'italic 8'
+
+[sudo]
+format = '[with](italic 8) [$symbol]($style)'
+disabled = false
+style = 'bold 17'
+symbol = ' '
+
+[swift]
+disabled = true
+
+[terraform]
+disabled = true
+
+# [time]
+
+# [username]
+
+[vagrant]
+disabled = true
+
+[vlang]
+disabled = true
+
+[vcsh]
+disabled = true
+
+[zig]
+disabled = true

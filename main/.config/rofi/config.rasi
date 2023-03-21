@@ -1,0 +1,11 @@
+configuration {
+    dpi: 96;
+    font: "Iosevka Nerd Font 13";
+    show-icons: true;
+    icon-theme: "Papirus-Dark";
+    hide-scrollbar: true;
+    terminal: "alacritty";
+    threads: 0;
+}
+
+// vim:ft=rasi

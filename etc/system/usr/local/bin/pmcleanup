@@ -1,0 +1,10 @@
+#!/bin/sh
+
+printf '[1mRemoving [33mold [35mofficial [37mpackages[0m '
+paccache -rk2 2>/dev/null
+printf '[1mRemoving [33mold [36mAUR/local [37mpackages[0m '
+paccache -rk2 -c /build/packages 2>/dev/null
+printf '[1mRemoving all [31muninstalled [35mofficial [37mpackages[0m '
+paccache -ruk0 2>/dev/null
+printf '[1mRemoving all [31muninstalled [36mAUR/local [37mpackages[0m '
+paccache -ruk0 -c /build/packages 2>/dev/null

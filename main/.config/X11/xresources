@@ -1,0 +1,60 @@
+! Start flavours
+#define base00 #1a2736
+#define base01 #384752
+#define base02 #56686f
+#define base03 #73888b
+#define base04 #91a8a7
+#define base05 #afc8c3
+#define base06 #bbd0cc
+#define base07 #c7d8d5
+#define base08 #7b65e1
+#define base09 #447ea1
+#define base0A #948394
+#define base0B #c15569
+#define base0C #4b7cab
+#define base0D #6e7891
+#define base0E #4a8279
+#define base0F #3a8479
+
+*foreground:   base05
+*background:   base00
+*cursorColor:  base05
+
+*color0:       base00
+*color1:       base08
+*color2:       base0B
+*color3:       base0A
+*color4:       base0D
+*color5:       base0E
+*color6:       base0C
+*color7:       base05
+
+*color8:       base03
+*color9:       base08
+*color10:      base0B
+*color11:      base0A
+*color12:      base0D
+*color13:      base0E
+*color14:      base0C
+*color15:      base07
+
+*color16:      base09
+*color17:      base0F
+*color18:      base01
+*color19:      base02
+*color20:      base04
+*color21:      base06
+! End flavours
+
+Sxiv*background: base00
+Sxiv*foreground: base09
+
+Xcursor.theme: phinger-cursors-light
+
+Xft.autohint: 0
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintslight
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+Xft.dpi: 96

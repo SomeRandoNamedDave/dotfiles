@@ -1,0 +1,8 @@
+pkgname='qutebrowser-deps'
+pkgver='1.0'
+pkgrel=1
+pkgdesc='qutebrowser build dependency package'
+arch=('x86_64')
+depends=('python-pygments' 'asciidoc' 'docbook-xml')
+
+package() { :; }

@@ -1,0 +1,12 @@
+#!/bin/sh
+
+update_startpage() {
+    j=$(shuf -i1-1000000 -n1)
+    sed -i "s/ver=.*\"/ver=${j}\"/g" $STARTPAGE/index.html
+}
+
+hsetroot -cover "$(readlink $XDG_CONFIG_HOME/awesome/assets/wallpaper)" 1>/dev/null 2>&1
+flavours apply generated
+update_startpage &
+xrdb -merge $XDG_CONFIG_HOME/X11/xresources &
+pgrep qutebrowser 1>/dev/null 2>&1 && qutebrowser :config-source 1>/dev/null 2>&1 &

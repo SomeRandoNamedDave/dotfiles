@@ -1,0 +1,10 @@
+{
+  "default": {
+    "sensitivity1": 800,
+    "sensitivity2": 1600,
+    "polling_rate": 1000,
+    "color": "black",
+    "light_effect": "steady",
+    "btn6_mode": "dpi"
+  }
+}

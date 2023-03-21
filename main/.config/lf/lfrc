@@ -1,0 +1,130 @@
+# basics
+set shell sh
+set shellopts '-eu'
+set ifs "\n"
+set period 1
+
+# display
+set hidden off
+set scrolloff 10
+set drawbox
+set ratios '1:1'
+set icons
+set promptfmt '[1;34m%w[0m%S[3;38;5;16mlf [0;38;5;17m [0m'
+set cursoractivefmt '[7m'
+set cursorpreviewfmt '[7m'
+set previewer preview
+
+# window title
+cmd on-cd &{{
+    printf "]0;lf ($(pwd | sed "s|$HOME|~|"))\007" > /dev/tty
+}}
+on-cd
+
+# sync/redraw
+map <c-l> load
+
+# use enter for shell commands
+map <enter> shell
+
+# better paging
+# map i $bat --paging=always "$f"
+map i $pager-preview "$f" | less -R
+
+# execute current file (must be executable)
+map x $$f
+map X !$f
+
+# dedicated keys for file opener actions
+map o &mimeopen $f
+map O $mimeopen --ask $f
+
+# custom edit command
+map e $TERM=wezterm $EDITOR "$f"
+
+# define a custom 'open' command
+# This command is called when current file is not a directory. You may want to
+# use either file extensions and/or mime types here. Below uses an editor for
+# text files and a file opener for the rest.
+cmd open ${{
+    test -L $f && f=$(readlink -f $f)
+    case $(file --mime-type $f -b) in
+        text/*) TERM=wezterm $EDITOR $fx;;
+        *) for f in $fx; do setsid $OPENER $f > /dev/null 2> /dev/null & done;;
+    esac
+}}
+
+# define a custom 'rename' command without prompt for overwrite
+# cmd rename %[ -e $1 ] && printf "file exists" || mv $f $1
+# map r push :rename<space>
+
+# define a custom 'delete' command
+# cmd delete ${{
+#     set -f
+#     printf "$fx\n"
+#     printf "delete?[y/n]"
+#     read ans
+#     [ $ans = "y" ] && rm -rf $fx
+# }}
+
+# use '<delete>' key for either 'trash' or 'delete' command
+# map <delete> trash
+# map <delete> delete
+
+cmd follow_link %{{
+  lf -remote "send ${id} select '$(readlink $f)'"
+}}
+map gL follow_link
+
+# y (select for copy) and P to paste soft-link
+# d (select for cut) and P to paste hard-link
+cmd link %{{
+    set -- $(cat ~/.local/share/lf/files)
+    mode="$1"
+    shift
+    if [ "$#" -lt 1 ]; then
+        lf -remote "send $id echo no files to link"
+        exit 0
+    fi
+    case "$mode" in
+        # symbolically copy mode is indicating a soft link
+        copy) ln -sr -t . -- "$@";;
+        # while a move mode is indicating a hard link
+        move) ln -t . -- "$@";;
+    esac
+    rm ~/.local/share/lf/files
+    lf -remote "send clear"
+}}
+map P :link
+
+# extract the current file with the right command
+# (xkcd link: https://xkcd.com/1168/)
+cmd extract ${{
+    set -f
+    case $f in
+        *.tar.bz|*.tar.bz2|*.tbz|*.tbz2) tar xjvf $f;;
+        *.tar.gz|*.tgz) tar xzvf $f;;
+        *.tar.xz|*.txz) tar xJvf $f;;
+        *.zip) unzip $f;;
+        *.rar) unrar x $f;;
+        *.7z) 7z x $f;;
+    esac
+}}
+
+# compress current file or selected files with tar and gunzip
+cmd tar ${{
+    set -f
+    mkdir $1
+    cp -r $fx $1
+    tar czf $1.tar.gz $1
+    rm -rf $1
+}}
+
+# compress current file or selected files with zip
+cmd zip ${{
+    set -f
+    mkdir $1
+    cp -r $fx $1
+    zip -r $1.zip $1
+    rm -rf $1
+}}
