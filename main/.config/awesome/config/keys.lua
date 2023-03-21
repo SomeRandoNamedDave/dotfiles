@@ -349,7 +349,20 @@ for n = 6,8,1 do -- [ audio mixer ]
         awful.key(
             { 'Mod4', 'Mod1' },
             'F' .. n,
-            function() spawn("wezterm start --class 'volume' -- pulsemixer") end,
+            function()
+                for _, c in ipairs(client.get()) do
+                    if c.class == 'volume' then
+                        if c.active then
+                            c.hidden = true
+                            return
+                        end
+                        c.hidden = false
+                        c:activate({})
+                        return
+                    end
+                end
+                spawn("wezterm start --class 'volume' -- pulsemixer")
+            end,
             { description = '--> pulsemixer (audio mixer)', group = 'launch' }
         )
     })

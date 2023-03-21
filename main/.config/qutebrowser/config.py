@@ -1226,7 +1226,7 @@ c.editor.command = ['wezterm', '-e', 'nvim', '{file}', '-c', 'normal {line}G{col
 ## font setting, it's replaced with the fonts listed here. If set to an
 ## empty value, a system-specific monospace default is used.
 ## Type: List of Font, or Font
-# c.fonts.default_family = []
+c.fonts.default_family = 'Iosevka Nerd Font'
 
 ## Default font size to use. Whenever "default_size" is used in a font
 ## setting, it's replaced with the size listed here. Valid values are
@@ -1277,27 +1277,27 @@ c.fonts.default_size = '11pt'
 
 ## Font family for cursive fonts.
 ## Type: FontFamily
-# c.fonts.web.family.cursive = ''
+c.fonts.web.family.cursive = 'Victor Mono Italic Nerd Font'
 
 ## Font family for fantasy fonts.
 ## Type: FontFamily
-# c.fonts.web.family.fantasy = ''
+c.fonts.web.family.fantasy = 'Victor Mono Italic Nerd Font'
 
 ## Font family for fixed fonts.
 ## Type: FontFamily
-# c.fonts.web.family.fixed = ''
+c.fonts.web.family.fixed = 'Iosevka Nerd Font'
 
 ## Font family for sans-serif fonts.
 ## Type: FontFamily
-# c.fonts.web.family.sans_serif = ''
+c.fonts.web.family.sans_serif = 'Iosevka Nerd Font'
 
 ## Font family for serif fonts.
 ## Type: FontFamily
-# c.fonts.web.family.serif = ''
+c.fonts.web.family.serif = 'Iosevka Nerd Font'
 
 ## Font family for standard fonts.
 ## Type: FontFamily
-# c.fonts.web.family.standard = ''
+c.fonts.web.family.standard = 'Iosevka Nerd Font'
 
 ## Default font size (in pixels) for regular text.
 ## Type: Int

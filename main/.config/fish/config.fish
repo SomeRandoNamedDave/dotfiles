@@ -5,7 +5,7 @@ if status is-login
 
     # ENVIRONMENT VARIABLES
     ## basic
-    for x in (find (readlink $HOME/.local/bin) -type d)
+    for x in (find $HOME/.local/bin -type d)
         set -gx PATH $PATH $x
     end
     set -gx PATH $PATH $HOME/projects/testing
