@@ -21,7 +21,7 @@ disabled = true
 disabled = true
 
 [c]
-format = '[via](italic 8) [$symbol(($name )$version)]($style) '
+format = '[via](italic 19) [$symbol(($name )$version)]($style) '
 style = 'bold blue'
 symbol = ' '
 version_format = '${raw}'
@@ -60,7 +60,7 @@ disabled = true
 disabled = true
 
 [directory]
-before_repo_root_style = '8'
+before_repo_root_style = '19'
 fish_style_pwd_dir_length = 3
 home_symbol = ' '
 read_only = ' 🔒'
@@ -94,7 +94,7 @@ disabled = true
 disabled = true
 
 [git_branch]
-format = '[on](italic 8) [$symbol$branch(:$remote_branch)]($style) '
+format = '[on](italic 19) [$symbol$branch(:$remote_branch)]($style) '
 symbol = ' '
 
 # [git_commit]
@@ -117,7 +117,7 @@ stashed = '[ $count ](bold blue)'
 untracked = '[ $count ](bold 17)'
 
 [golang]
-format = '[via](italic 8) [$symbol($version)]($style) '
+format = '[via](italic 19) [$symbol($version)]($style) '
 symbol = ' '
 version_format = '${raw}'
 
@@ -151,7 +151,7 @@ disabled = true
 disabled = true
 
 [lua]
-format = '[via](italic 8) [$symbol($version)]($style) '
+format = '[via](italic 19) [$symbol($version)]($style) '
 symbol = ' '
 version_format = '${raw}'
 
@@ -177,7 +177,7 @@ disabled = true
 disabled = true
 
 [package]
-format = '[is](italic 8) [$symbol$version]($style) '
+format = '[is](italic 19) [$symbol$version]($style) '
 style = 'bold 16'
 version_format = '${raw}'
 
@@ -192,7 +192,7 @@ disabled = true
 disabled = true
 
 [python]
-format = '[via](italic 8) [${symbol}${pyenv_prefix}(${version} )(\\($virtualenv\\) )]($style)'
+format = '[via](italic 19) [${symbol}${pyenv_prefix}(${version} )(\\($virtualenv\\) )]($style)'
 version_format = '${raw}'
 
 [rlang]
@@ -208,7 +208,7 @@ disabled = true
 disabled = true
 
 [rust]
-format = '[via](italic 8) [$symbol($version )]($style)'
+format = '[via](italic 19) [$symbol($version )]($style)'
 style = 'bold fg:#f74c00'
 version_format = '${raw}'
 
@@ -229,10 +229,10 @@ disabled = false
 format = '[$common_meaning$signal_name$maybe_int]($style) '
 pipestatus = true
 pipestatus_format = '\[$pipestatus\] => [$common_meaning$signal_name$maybe_int]($style) '
-style = 'italic 8'
+style = 'italic 19'
 
 [sudo]
-format = '[with](italic 8) [$symbol]($style)'
+format = '[with](italic 19) [$symbol]($style)'
 disabled = false
 style = 'bold 17'
 symbol = ' '

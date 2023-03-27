@@ -7,12 +7,15 @@ return {
         'neovim/nvim-lspconfig',
         dependencies = 'hrsh7th/nvim-cmp',
         event = {
-            'BufReadPost *.lua',
-            'BufReadPost *.rs',
-            'BufReadPost *.sh',
-            'BufReadPost *.go',
             'BufReadPost Cargo.toml',
             'BufReadPost go.mod'
+        },
+        ft = {
+            'go',
+            'lua',
+            'python',
+            'rust',
+            'sh'
         },
         config = function()
             local signs = { Error = '󰅙 ', Warn = ' ', Info = ' ', Hint = '󱧡 ' }
